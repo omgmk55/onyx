@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace Patient - Clinique Onyx</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="bg-off-white font-sans antialiased">
+
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white border-r border-gray-200 hidden md:flex flex-col">
+            <div class="h-20 flex items-center px-6 border-b border-gray-100">
+                <a href="index.html" class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white font-bold">O
+                    </div>
+                    <span class="font-display font-bold text-xl text-dark">Clinique Onyx</span>
+                </a>
+            </div>
+
+            <nav id="sidebar-nav" class="flex-1 p-4 space-y-1">
+                <a href="#" data-target="view-dashboard"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-xl bg-primary/10 text-primary font-bold transition-all">
+                    <i class="fa-solid fa-chart-pie w-5"></i>
+                    Tableau de bord
+                </a>
+                <a href="#" data-target="view-appointments"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 transition-colors">
+                    <i class="fa-solid fa-calendar-check w-5"></i>
+                    Rendez-vous
+                </a>
+                <a href="#" data-target="view-records"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 transition-colors">
+                    <i class="fa-solid fa-file-medical w-5"></i>
+                    Dossier Médical
+                </a>
+                <a href="#" data-target="view-messages"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 transition-colors">
+                    <i class="fa-solid fa-message w-5"></i>
+                    Messages
+                    <span class="ml-auto bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">2</span>
+                </a>
+            </nav>
+
+            <div class="p-4 border-t border-gray-100">
+                <button onclick="Auth.logout()"
+                    class="flex items-center gap-3 px-4 py-3 w-full rounded-xl text-red-500 hover:bg-red-50 transition-colors font-medium">
+                    <i class="fa-solid fa-right-from-bracket w-5"></i>
+                    Déconnexion
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto bg-off-white">
+            <!-- Header -->
+            <header
+                class="h-20 bg-white/80 backdrop-blur border-b border-gray-200 sticky top-0 z-30 px-8 flex items-center justify-between">
+                <h1 class="font-display font-bold text-2xl text-dark">Bonjour, <span id="userName"
+                        class="text-primary">Patient</span> 👋</h1>
+                <div class="flex items-center gap-4">
+                    <button
+                        class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-primary/10 hover:text-primary transition-colors hover:animate-shake">
+                        <i class="fa-solid fa-bell"></i>
+                    </button>
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-purple-600 p-0.5 cursor-pointer transform hover:scale-105 transition-transform"
+                        onclick="alert('Profil utilisateur')">
+                        <div
+                            class="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
+                            <i class="fa-solid fa-user text-gray-400"></i>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="p-8 max-w-7xl mx-auto relative content-area">
+
+                <!-- VIEW: DASHBOARD -->
+                <div id="view-dashboard" class="dashboard-section animate-fade-in">
+                    <!-- Stats -->
+                    <div class="grid md:grid-cols-4 gap-6 mb-8">
+                        <div
+                            class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div class="flex items-center justify-between mb-4">
+                                <div
+                                    class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 text-xl">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                </div>
+                                <span
+                                    class="text-xs font-bold text-green-500 bg-green-50 px-2 py-1 rounded">Confirmé</span>
+                            </div>
+                            <h3 class="text-gray-500 text-sm font-medium">Prochain RDV</h3>
+                            <p class="text-dark font-bold text-lg mt-1">24 Déc, 10:00</p>
+                        </div>
+                        <div
+                            class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div class="flex items-center justify-between mb-4">
+                                <div
+                                    class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center text-purple-600 text-xl">
+                                    <i class="fa-solid fa-file-prescription"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-gray-500 text-sm font-medium">Ordonnances</h3>
+                            <p class="text-dark font-bold text-lg mt-1">2 Actives</p>
+                        </div>
+                        <div
+                            class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div class="flex items-center justify-between mb-4">
+                                <div
+                                    class="w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center text-yellow-600 text-xl">
+                                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-gray-500 text-sm font-medium">Factures</h3>
+                            <p class="text-dark font-bold text-lg mt-1">À jour</p>
+                        </div>
+                        <div
+                            class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div class="flex items-center justify-between mb-4">
+                                <div
+                                    class="w-12 h-12 bg-pink-50 rounded-xl flex items-center justify-center text-pink-600 text-xl">
+                                    <i class="fa-solid fa-heart-pulse"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-gray-500 text-sm font-medium">Constante</h3>
+                            <p class="text-dark font-bold text-lg mt-1">120/80</p>
+                        </div>
+                    </div>
+
+                    <!-- Content Grid -->
+                    <div class="grid lg:grid-cols-3 gap-8">
+                        <!-- Appointments -->
+                        <div class="lg:col-span-2 bg-white rounded-3xl shadow-sm border border-gray-100 p-6">
+                            <div class="flex items-center justify-between mb-6">
+                                <h2 class="font-display font-bold text-xl text-dark">Rendez-vous à venir</h2>
+                                <button id="btn-see-all-rdv" class="text-primary text-sm font-bold hover:underline">Voir
+                                    tout</button>
+                            </div>
+
+                            <div id="appointments-list" class="space-y-4">
+                                <!-- JS will populate this -->
+                                <div class="p-8 text-center text-gray-400">
+                                    <i class="fa-solid fa-spinner fa-spin text-2xl"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Support Card -->
+                        <div
+                            class="bg-gradient-to-br from-primary to-purple-800 rounded-3xl shadow-lg p-6 text-white relative overflow-hidden group">
+                            <div
+                                class="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-2xl -mr-10 -mt-10 group-hover:bg-white/20 transition-all duration-500">
+                            </div>
+
+                            <h2 class="font-display font-bold text-xl mb-6 relative z-10">Besoin d'aide ?</h2>
+                            <p class="text-white/80 text-sm mb-6 relative z-10">Notre équipe est disponible pour
+                                répondre à vos questions 24/7.</p>
+
+                            <button id="btn-contact-support"
+                                class="w-full py-3 rounded-xl bg-white text-primary font-bold hover:bg-gray-100 transition-colors relative z-10 shadow-lg transform active:scale-95 transition-transform">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center animate-pulse shadow-lg shadow-red-500/50">
+                                        <i class="fa-solid fa-phone"></i>
+                                    </div>
+                                    <a href="tel:0813376119"
+                                        class="font-bold text-lg hover:underline decoration-white/50">081 33 76 119</a>
+                                </div>
+                            </button>
+
+                            <div class="mt-8 pt-6 border-t border-white/20 relative z-10">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center animate-pulse shadow-lg shadow-red-500/50">
+                                        <i class="fa-solid fa-phone"></i>
+                                    </div>
+                                    <a href="tel:0813376119"
+                                        class="font-bold text-lg hover:underline decoration-white/50">081 33 76 119</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VIEW: APPOINTMENTS -->
+                <div id="view-appointments" class="dashboard-section hidden animate-fade-in">
+                    <h2 class="font-display font-bold text-3xl text-dark mb-6">Tous mes rendez-vous</h2>
+                    <div id="all-appointments-list" class="space-y-4">
+                        <!-- JS populated -->
+                    </div>
+                </div>
+
+                <!-- VIEW: RECORDS -->
+                <div id="view-records" class="dashboard-section hidden animate-fade-in">
+                    <h2 class="font-display font-bold text-3xl text-dark mb-6">Dossier Médical</h2>
+                    <div class="bg-white p-12 rounded-3xl text-center border border-gray-100">
+                        <div
+                            class="w-24 h-24 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-4 text-gray-300 text-4xl">
+                            <i class="fa-solid fa-folder-open"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark">Documents sécurisés</h3>
+                        <p class="text-gray-500 mt-2">Accédez à vos ordonnances et résultats d'analyse.</p>
+                        <button
+                            class="mt-6 px-6 py-3 rounded-xl bg-primary text-white font-bold hover:bg-purple-700 transition-colors">
+                            <i class="fa-solid fa-download mr-2"></i> Télécharger le dossier complet
+                        </button>
+                    </div>
+                </div>
+
+                <!-- VIEW: MESSAGES -->
+                <div id="view-messages" class="dashboard-section hidden animate-fade-in">
+                    <h2 class="font-display font-bold text-3xl text-dark mb-6">Messagerie</h2>
+                    <div class="bg-white rounded-3xl border border-gray-100 overflow-hidden divide-y divide-gray-100">
+                        <!-- Mock Messages -->
+                        <div class="p-6 hover:bg-gray-50 cursor-pointer transition-colors relative group">
+                            <div class="flex justify-between items-start mb-1">
+                                <h4 class="font-bold text-dark">Dr. Kabedi <span
+                                        class="ml-2 text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full">Médecin</span>
+                                </h4>
+                                <span class="text-xs text-gray-400">09:30</span>
+                            </div>
+                            <p class="font-medium text-gray-800">Compte rendu de séance</p>
+                            <p class="text-sm text-gray-500 mt-1 line-clamp-1">Bonjour, voici le résumé de notre
+                                dernière consultation. Veuillez prendre note des exercices...</p>
+                        </div>
+                        <div class="p-6 hover:bg-gray-50 cursor-pointer transition-colors relative group">
+                            <div class="flex justify-between items-start mb-1">
+                                <h4 class="font-bold text-dark">Secrétariat Onyx</h4>
+                                <span class="text-xs text-gray-400">Hier</span>
+                            </div>
+                            <p class="font-medium text-gray-800">Rappel de rendez-vous</p>
+                            <p class="text-sm text-gray-500 mt-1 line-clamp-1">N'oubliez pas votre rendez-vous de demain
+                                à 10h00 avec le Dr. Kabedi. En cas d'empêchement...</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script>
+        // Update user name on dashboard
+        const user = Auth.getCurrentUser();
+        if (user) {
+            document.getElementById('userName').textContent = user.name.split(' ')[0];
+        }
+    </script>
+</body>
+
+</html>
+```

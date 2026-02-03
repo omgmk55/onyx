@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos - Clinique Onyx</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="bg-off-white text-gray-800 font-sans antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-2 group">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center text-white font-display font-bold text-xl shadow-lg group-hover:scale-105 transition-transform">
+                            O</div>
+                        <span class="font-display font-bold text-2xl text-dark">Clinique <span
+                                class="text-primary">Onyx</span></span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html"
+                        class="text-gray-600 hover:text-primary font-medium transition-colors">Accueil</a>
+                    <a href="services.html"
+                        class="text-gray-600 hover:text-primary font-medium transition-colors">Services</a>
+                    <a href="apropos.html" class="text-primary font-bold">À Propos</a>
+                    <a href="index.html#horaires"
+                        class="text-gray-600 hover:text-primary font-medium transition-colors">Horaires</a>
+
+                    <div class="flex items-center gap-4 pl-4 border-l border-gray-200">
+                        <a href="login.html"
+                            class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all shadow-sm hover:shadow-md"
+                            title="Connexion">
+                            <i class="fa-solid fa-user"></i>
+                        </a>
+                        <a href="contact.html"
+                            class="px-6 py-2.5 rounded-full bg-primary text-white font-medium hover:bg-purple-700 transition-all shadow-lg shadow-primary/30 hover:-translate-y-0.5">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button text-gray-600 hover:text-primary focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0 shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-purple-50 hover:text-primary">Accueil</a>
+                <a href="services.html"
+                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-purple-50 hover:text-primary">Services</a>
+                <a href="apropos.html" class="block px-3 py-2 rounded-md font-bold text-primary bg-purple-50">À
+                    Propos</a>
+                <a href="index.html#horaires"
+                    class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-purple-50 hover:text-primary">Horaires</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md font-medium text-white bg-primary">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="relative pt-32 pb-20 overflow-hidden bg-gradient-to-br from-indigo-50 via-purple-50 to-white">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div
+                class="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob">
+            </div>
+            <div
+                class="absolute bottom-0 right-0 w-96 h-96 bg-secondary/20 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000">
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Découvrez notre institution, notre mission et l'équipe
+                passionnée qui prend soin de vous.</p>
+        </div>
+    </header>
+
+    <!-- Mission & Vision -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div
+                        class="absolute -inset-4 bg-gradient-to-br from-primary to-purple-600 rounded-3xl opacity-10 blur-xl">
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 relative z-10">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div
+                                class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center text-primary text-2xl">
+                                <i class="fa-solid fa-hospital"></i>
+                            </div>
+                            <h2 class="font-display font-bold text-3xl text-dark">Qui sommes-nous?</h2>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            La Clinique Onyx est bien plus qu'une institution de santé mentale. C'est un lieu d'écoute,
+                            de soin et de réhabilitation. Nous nous engageons à offrir des soins de qualité supérieure
+                            pour les troubles psychiatriques, neurologiques et psychosociaux.
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="font-display font-bold text-4xl text-dark mb-6">Des Valeurs Fortes</h2>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="p-6 bg-gray-50 rounded-2xl hover:bg-white hover:shadow-lg transition-all">
+                            <i class="fa-solid fa-heart text-3xl text-red-500 mb-3"></i>
+                            <h3 class="font-bold text-lg mb-1">Compassion</h3>
+                            <p class="text-sm text-gray-500">Bienveillance et respect</p>
+                        </div>
+                        <div class="p-6 bg-gray-50 rounded-2xl hover:bg-white hover:shadow-lg transition-all">
+                            <i class="fa-solid fa-medal text-3xl text-secondary mb-3"></i>
+                            <h3 class="font-bold text-lg mb-1">Excellence</h3>
+                            <p class="text-sm text-gray-500">Qualité des soins</p>
+                        </div>
+                        <div class="p-6 bg-gray-50 rounded-2xl hover:bg-white hover:shadow-lg transition-all">
+                            <i class="fa-solid fa-handshake text-3xl text-primary mb-3"></i>
+                            <h3 class="font-bold text-lg mb-1">Confiance</h3>
+                            <p class="text-sm text-gray-500">Intégrité totale</p>
+                        </div>
+                        <div class="p-6 bg-gray-50 rounded-2xl hover:bg-white hover:shadow-lg transition-all">
+                            <i class="fa-solid fa-lightbulb text-3xl text-yellow-500 mb-3"></i>
+                            <h3 class="font-bold text-lg mb-1">Innovation</h3>
+                            <p class="text-sm text-gray-500">Approches modernes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-primary font-bold tracking-wider uppercase text-sm">Notre Force</span>
+                <h2 class="font-display font-black text-4xl mt-2 text-dark">L'Équipe <span
+                        class="text-primary">Onyx</span></h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Admins -->
+                <div
+                    class="bg-white p-8 rounded-3xl shadow-md border-b-4 border-primary text-center group hover:transform hover:-translate-y-2 transition-transform">
+                    <div
+                        class="w-20 h-20 bg-primary/10 rounded-full mx-auto flex items-center justify-center text-primary text-3xl mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <div class="text-4xl font-black text-dark mb-1">10</div>
+                    <h3 class="font-bold text-gray-500 uppercase text-sm tracking-wide">Administrateurs</h3>
+                </div>
+
+                <!-- Doctors -->
+                <div
+                    class="bg-white p-8 rounded-3xl shadow-md border-b-4 border-secondary text-center group hover:transform hover:-translate-y-2 transition-transform">
+                    <div
+                        class="w-20 h-20 bg-secondary/10 rounded-full mx-auto flex items-center justify-center text-yellow-600 text-3xl mb-4 group-hover:bg-secondary group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    <div class="text-4xl font-black text-dark mb-1">03</div>
+                    <h3 class="font-bold text-gray-500 uppercase text-sm tracking-wide">Médecins Spécialistes</h3>
+                    <p class="text-xs text-gray-400 mt-2">Neuropsychiatres</p>
+                </div>
+
+                <!-- Nurses -->
+                <div
+                    class="bg-white p-8 rounded-3xl shadow-md border-b-4 border-green-500 text-center group hover:transform hover:-translate-y-2 transition-transform">
+                    <div
+                        class="w-20 h-20 bg-green-50 rounded-full mx-auto flex items-center justify-center text-green-600 text-3xl mb-4 group-hover:bg-green-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-user-nurse"></i>
+                    </div>
+                    <div class="text-4xl font-black text-dark mb-1">05</div>
+                    <h3 class="font-bold text-gray-500 uppercase text-sm tracking-wide">Infirmières</h3>
+                    <p class="text-xs text-gray-400 mt-2">A1, A2, Accoucheuse</p>
+                </div>
+
+                <!-- Support -->
+                <div
+                    class="bg-white p-8 rounded-3xl shadow-md border-b-4 border-pink-500 text-center group hover:transform hover:-translate-y-2 transition-transform">
+                    <div
+                        class="w-20 h-20 bg-pink-50 rounded-full mx-auto flex items-center justify-center text-pink-500 text-3xl mb-4 group-hover:bg-pink-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div class="text-4xl font-black text-dark mb-1">05</div>
+                    <h3 class="font-bold text-gray-500 uppercase text-sm tracking-wide">Support</h3>
+                    <p class="text-xs text-gray-400 mt-2">Admin & Gardes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Members Grid -->
+    <section class="py-20 bg-gradient-to-br from-indigo-50 to-purple-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-primary font-bold tracking-wider uppercase text-sm">Nos Experts</span>
+                <h2 class="font-display font-black text-4xl mt-2 text-dark">Ceux qui veillent sur vous</h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Une équipe multidisciplinaire dévouée à votre
+                    rétablissement.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Member 1 -->
+                <div class="relative group">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-300">
+                    </div>
+                    <div
+                        class="relative bg-white/40 backdrop-blur-xl border border-white/50 rounded-2xl p-6 text-center shadow-lg transition-transform transform group-hover:-translate-y-2">
+                        <div
+                            class="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-primary to-purple-500 p-1 mb-6">
+                            <div
+                                class="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
+                                <i class="fa-solid fa-user-doctor text-6xl text-gray-300"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-dark">Dr. Principal</h3>
+                        <p class="text-primary font-medium text-sm mb-4">Médecin Directeur</p>
+                        <p class="text-gray-600 text-sm italic mb-6">"Le patient est au cœur de toutes nos décisions
+                            médicales."</p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="#"
+                                class="w-8 h-8 rounded-full bg-white/50 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><i
+                                    class="fa-brands fa-linkedin-in text-sm"></i></a>
+                            <a href="#"
+                                class="w-8 h-8 rounded-full bg-white/50 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"><i
+                                    class="fa-solid fa-envelope text-sm"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="relative group">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-secondary to-yellow-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-300">
+                    </div>
+                    <div
+                        class="relative bg-white/40 backdrop-blur-xl border border-white/50 rounded-2xl p-6 text-center shadow-lg transition-transform transform group-hover:-translate-y-2">
+                        <div
+                            class="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-secondary to-yellow-400 p-1 mb-6">
+                            <div
+                                class="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
+                                <i class="fa-solid fa-user-nurse text-6xl text-gray-300"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-dark">Infirmière Chef</h3>
+                        <p class="text-yellow-600 font-medium text-sm mb-4">Coordination des Soins</p>
+                        <p class="text-gray-600 text-sm italic mb-6">"Une écoute bienveillante est le premier pas vers
+                            la guérison."</p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="#"
+                                class="w-8 h-8 rounded-full bg-white/50 flex items-center justify-center text-yellow-600 hover:bg-secondary hover:text-white transition-colors"><i
+                                    class="fa-brands fa-linkedin-in text-sm"></i></a>
+                            <a href="#"
+                                class="w-8 h-8 rounded-full bg-white/50 flex items-center justify-center text-yellow-600 hover:bg-secondary hover:text-white transition-colors"><i
+                                    class="fa-solid fa-envelope text-sm"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="relative group">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-green-400 to-teal-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-300">
+                    </div>
+                    <div
+                        class="relative bg-white/40 backdrop-blur-xl border border-white/50 rounded-2xl p-6 text-center shadow-lg transition-transform transform group-hover:-translate-y-2">
+                        <div
+                            class="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-green-400 to-teal-400 p-1 mb-6">
+                            <div
+                                class="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
+                                <i class="fa-solid fa-user-tie text-6xl text-gray-300"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-dark">Directeur Admin</h3>
+                        <p class="text-teal-600 font-medium text-sm mb-4">Gestion & Opérations</p>
+                        <p class="text-gray-600 text-sm italic mb-6">"Assurer un environnement optimal pour le personnel
+                            et les patients."</p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="#"
+                                class="w-8 h-8 rounded-full bg-white/50 flex items-center justify-center text-teal-600 hover:bg-teal-500 hover:text-white transition-colors"><i
+                                    class="fa-brands fa-linkedin-in text-sm"></i></a>
+                            <a href="#"
+                                class="w-8 h-8 rounded-full bg-white/50 flex items-center justify-center text-teal-600 hover:bg-teal-500 hover:text-white transition-colors"><i
+                                    class="fa-solid fa-envelope text-sm"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as index) -->
+    <footer class="bg-gray-900 text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12 mb-16">
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 rounded bg-primary flex items-center justify-center font-bold">O</div>
+                        <span class="font-display font-bold text-xl">Clinique Onyx</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Votre partenaire de confiance en santé mentale.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-white">Liens Rapides</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="index.html" class="hover:text-primary transition-colors">Accueil</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition-colors">Nos Services</a></li>
+                        <li><a href="apropos.html" class="hover:text-primary transition-colors">À Propos</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-white">Contact</h4>
+                    <ul class="space-y-4 text-gray-400 text-sm">
+                        <li class="flex items-start gap-4"><i
+                                class="fa-solid fa-location-dot mt-1 text-primary"></i><span>Avenue Fermier no
+                                5<br>Boulevard Lumumba</span></li>
+                        <li class="flex items-center gap-4"><i class="fa-solid fa-phone text-primary"></i><span>081 33
+                                76 119</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2024 Clinique Onyx. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.querySelector("button.mobile-menu-button");
+        const menu = document.querySelector(".mobile-menu");
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+    </script>
+    <!-- Auth Script -->
+    <script src="js/auth.js"></script>
+</body>
+
+</html>
+```

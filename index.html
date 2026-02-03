@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clinique Onyx - Institution médico-sanitaire spécialisée en santé mentale.">
+    <title>Clinique Onyx - Soins de Santé Mentale Spécialisés</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="bg-off-white text-gray-800 font-sans antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-2 group">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center text-white font-display font-bold text-xl shadow-lg group-hover:scale-105 transition-transform">
+                            O
+                        </div>
+                        <span class="font-display font-bold text-2xl text-dark">Clinique <span
+                                class="text-primary">Onyx</span></span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#accueil"
+                        class="text-gray-600 hover:text-primary font-medium transition-colors relative group">
+                        Accueil
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="services.html"
+                        class="text-gray-600 hover:text-primary font-medium transition-colors relative group">
+                        Services
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="apropos.html"
+                        class="text-gray-600 hover:text-primary font-medium transition-colors relative group">
+                        À Propos
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#horaires"
+                        class="text-gray-600 hover:text-primary font-medium transition-colors relative group">
+                        Horaires
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                    </a>
+                    <div class="flex items-center gap-4 pl-4 border-l border-gray-200">
+                        <a href="login.html"
+                            class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all shadow-sm hover:shadow-md group relative"
+                            title="Espace Patient">
+                            <i class="fa-solid fa-user"></i>
+                            <span
+                                class="absolute -bottom-10 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Se
+                                connecter</span>
+                        </a>
+                        <a href="contact.html"
+                            class="px-6 py-2.5 rounded-full bg-primary text-white font-medium hover:bg-purple-700 transition-all shadow-lg shadow-primary/30 hover:-translate-y-0.5">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button text-gray-600 hover:text-primary focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-xl">
+                <a href="#accueil"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-purple-50">Accueil</a>
+                <a href="services.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-purple-50">Services</a>
+                <a href="apropos.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-purple-50">À
+                    Propos</a>
+                <a href="#horaires"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-purple-50">Horaires</a>
+                <a href="contact.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-primary hover:bg-purple-50 font-semibold">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil"
+        class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-gradient-to-br from-indigo-50 via-purple-50 to-white">
+        <!-- Background Shapes -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div
+                class="absolute -top-40 -right-40 w-96 h-96 bg-primary/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob">
+            </div>
+            <div
+                class="absolute top-0 -left-40 w-96 h-96 bg-secondary/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000">
+            </div>
+            <div
+                class="absolute -bottom-40 left-20 w-96 h-96 bg-purple-300/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000">
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="inline-flex items-center px-4 py-2 rounded-full glass-panel mb-8 animate-float">
+                    <span class="w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
+                    <span class="text-sm font-medium text-primary">Excellence en Santé Mentale</span>
+                </div>
+
+                <h1
+                    class="font-display font-black text-5xl md:text-7xl lg:text-8xl tracking-tight mb-8 text-dark leading-tight">
+                    Clinique <span class="gradient-text">Onyx</span>
+                </h1>
+
+                <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+                    Institution médico-sanitaire spécialisée. Une expertise reconnue en soins psychiatriques,
+                    neurologiques et psychosociaux.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="contact.html"
+                        class="w-full sm:w-auto px-8 py-4 rounded-full bg-primary text-white font-bold text-lg hover:bg-purple-700 transition-all shadow-xl shadow-primary/30 hover:scale-105 hover:shadow-2xl">
+                        Prendre Rendez-vous
+                        <i class="fa-solid fa-calendar-check ml-2"></i>
+                    </a>
+                    <a href="services.html"
+                        class="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-dark border-2 border-gray-100 font-bold text-lg hover:border-primary hover:text-primary transition-all hover:scale-105 shadow-md">
+                        Nos Services
+                        <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#apropos" class="text-gray-400 hover:text-primary transition-colors">
+                <i class="fa-solid fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="apropos" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Card 1 -->
+                <div class="glass-panel p-10 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-16 h-16 rounded-2xl bg-purple-100 flex items-center justify-center mb-8">
+                        <i class="fa-solid fa-hospital-user text-3xl text-primary"></i>
+                    </div>
+                    <h2 class="font-display font-bold text-3xl mb-6 text-dark max-w-md">
+                        Qui sommes-nous?
+                    </h2>
+                    <div class="space-y-4 text-gray-600">
+                        <p>La Clinique Onyx est une institution médico-sanitaire spécialisée en santé mentale. Elle
+                            prend en charge :</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check-circle text-primary mt-1 mr-3"></i>
+                                <span>Les troubles psychiatriques</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check-circle text-primary mt-1 mr-3"></i>
+                                <span>Les troubles neurologiques</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check-circle text-primary mt-1 mr-3"></i>
+                                <span>Les troubles psychosociaux/psychologiques</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="glass-panel p-10 rounded-3xl hover:-translate-y-2 transition-transform duration-300 bg-gradient-to-br from-white to-purple-50">
+                    <div class="w-16 h-16 rounded-2xl bg-yellow-100 flex items-center justify-center mb-8">
+                        <i class="fa-solid fa-bullseye text-3xl text-secondary"></i>
+                    </div>
+                    <h2 class="font-display font-bold text-3xl mb-6 text-dark">
+                        Notre Mission
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Soutenir le ministère de la Santé dans ses orientations et programmes nationaux. Nous rendons
+                        disponibles notre expertise et nos ressources pour le repérage et la prise en charge des cas de
+                        santé mentale ainsi que pour les analyses de laboratoire.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section id="services" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-primary font-bold tracking-wider uppercase text-sm">Ce que nous offrons</span>
+                <h2 class="font-display font-black text-4xl md:text-5xl text-dark mt-2 mb-4">Nos Services <span
+                        class="text-primary">Principaux</span></h2>
+                <div class="w-24 h-1.5 bg-secondary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div
+                    class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 hover:shadow-2xl hover:border-primary/30 transition-all duration-300 group">
+                    <div
+                        class="text-6xl font-display font-black text-gray-100 mb-4 group-hover:text-primary/10 transition-colors">
+                        01</div>
+                    <div class="mb-6">
+                        <div
+                            class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-user-doctor text-2xl"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl text-dark mb-2">Services Médicaux</h3>
+                        <p class="text-gray-500 text-sm">Soins neuropsychiatriques ambulatoires et hospitaliers.</p>
+                    </div>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-center text-sm"><span
+                                class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>Soins ambulatoires</li>
+                        <li class="flex items-center text-sm"><span
+                                class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>Hospitalisation</li>
+                        <li class="flex items-center text-sm"><span
+                                class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>Counselling</li>
+                    </ul>
+                    <a href="services.html"
+                        class="inline-flex items-center text-primary font-bold hover:translate-x-2 transition-transform">
+                        En savoir plus <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div
+                    class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 hover:shadow-2xl hover:border-primary/30 transition-all duration-300 group">
+                    <div
+                        class="text-6xl font-display font-black text-gray-100 mb-4 group-hover:text-primary/10 transition-colors">
+                        02</div>
+                    <div class="mb-6">
+                        <div
+                            class="w-14 h-14 rounded-full bg-green-50 flex items-center justify-center text-green-600 mb-4 group-hover:bg-green-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-bed text-2xl"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl text-dark mb-2">Hébergement</h3>
+                        <p class="text-gray-500 text-sm">Structure d'accueil adaptée et confortable.</p>
+                    </div>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-center text-sm"><span
+                                class="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></span>16 lits standards</li>
+                        <li class="flex items-center text-sm"><span
+                                class="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></span>Chambres privées</li>
+                        <li class="flex items-center text-sm"><span
+                                class="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></span>Chambres communes</li>
+                    </ul>
+                    <a href="services.html"
+                        class="inline-flex items-center text-green-600 font-bold hover:translate-x-2 transition-transform">
+                        En savoir plus <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 (Featured) -->
+                <div
+                    class="bg-gradient-to-br from-primary to-purple-800 p-8 rounded-3xl shadow-xl text-white transform md:-translate-y-4 hover:scale-105 transition-all duration-300 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 blur-2xl"></div>
+
+                    <div class="text-6xl font-display font-black text-white/20 mb-4">03</div>
+                    <div class="mb-6">
+                        <div
+                            class="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center text-white mb-4 backdrop-blur-sm">
+                            <i class="fa-solid fa-microscope text-2xl"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-2xl text-white mb-2">Paraclinique</h3>
+                        <p class="text-white/80 text-sm">Explorations spécialisées avancées.</p>
+                    </div>
+                    <ul class="text-white/90 space-y-2 mb-6">
+                        <li class="flex items-center text-sm"><i
+                                class="fa-solid fa-check text-secondary mr-2"></i>Électroencéphalographie</li>
+                        <li class="flex items-center text-sm"><i class="fa-solid fa-check text-secondary mr-2"></i>Bilan
+                            biologique</li>
+                        <li class="flex items-center text-sm"><i class="fa-solid fa-check text-secondary mr-2"></i>Bilan
+                            psychologique</li>
+                    </ul>
+                    <a href="services.html"
+                        class="inline-flex items-center text-secondary font-bold hover:translate-x-2 transition-transform">
+                        Voir les détails <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages & Administration Grid -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Advantages -->
+                <div>
+                    <h2 class="font-display font-bold text-3xl mb-8 flex items-center">
+                        <span class="w-10 h-10 rounded-lg bg-yellow-100 flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-star text-secondary text-xl"></i>
+                        </span>
+                        Vos Avantages
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="flex gap-4 p-4 rounded-2xl hover:bg-gray-50 transition-colors">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                                <i class="fa-solid fa-pills text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark text-lg mb-1">Pharmacie Intégrée</h4>
+                                <p class="text-gray-600 text-sm">Médicaments disponibles sur place sans ordonnance
+                                    externe pour les psychotropes.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 p-4 rounded-2xl hover:bg-gray-50 transition-colors">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                                <i class="fa-solid fa-handshake text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark text-lg mb-1">Partenariats Solides</h4>
+                                <p class="text-gray-600 text-sm">Collaboration avec les cliniques universitaires,
+                                    centres spécialisés et hôpitaux de référence.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Administration -->
+                <div>
+                    <h2 class="font-display font-bold text-3xl mb-8 flex items-center">
+                        <span class="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-users-gear text-primary text-xl"></i>
+                        </span>
+                        Administration
+                    </h2>
+                    <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="text-center p-4 bg-white rounded-2xl shadow-sm">
+                                <div class="text-primary font-black text-3xl mb-1">10</div>
+                                <div class="text-xs font-bold uppercase tracking-wide text-gray-400">Administrateurs
+                                </div>
+                            </div>
+                            <div class="text-center p-4 bg-white rounded-2xl shadow-sm">
+                                <div class="text-primary font-black text-3xl mb-1">03</div>
+                                <div class="text-xs font-bold uppercase tracking-wide text-gray-400">Médecins
+                                    Spécialistes</div>
+                            </div>
+                            <div class="text-center p-4 bg-white rounded-2xl shadow-sm">
+                                <div class="text-primary font-black text-3xl mb-1">05</div>
+                                <div class="text-xs font-bold uppercase tracking-wide text-gray-400">Infirmières</div>
+                            </div>
+                            <div class="text-center p-4 bg-white rounded-2xl shadow-sm">
+                                <div class="text-primary font-black text-3xl mb-1">24/7</div>
+                                <div class="text-xs font-bold uppercase tracking-wide text-gray-400">Disponibilité</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="horaires" class="py-24 bg-dark relative overflow-hidden text-white">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-display font-black text-4xl mb-4">Nos Horaires</h2>
+                <p class="text-white/70 max-w-2xl mx-auto">Flexibilité et disponibilité pour répondre à vos besoins</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div
+                    class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors text-center">
+                    <div
+                        class="w-12 h-12 mx-auto bg-red-500/20 rounded-full flex items-center justify-center text-red-400 mb-4">
+                        <i class="fa-solid fa-truck-medical text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-white">Urgences</h3>
+                    <p class="text-sm text-gray-300">Sur appel 24h/24</p>
+                </div>
+
+                <div
+                    class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors text-center">
+                    <div
+                        class="w-12 h-12 mx-auto bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 mb-4">
+                        <i class="fa-regular fa-calendar-check text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-white">Sur Rendez-vous</h3>
+                    <p class="text-sm text-gray-300">Selon convenance</p>
+                </div>
+
+                <div
+                    class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors text-center">
+                    <div
+                        class="w-12 h-12 mx-auto bg-yellow-500/20 rounded-full flex items-center justify-center text-secondary mb-4">
+                        <i class="fa-regular fa-clock text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-white">Horaires Fixes</h3>
+                    <p class="text-sm text-gray-300">07h00 - 19h00</p>
+                </div>
+
+                <div
+                    class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors text-center">
+                    <div
+                        class="w-12 h-12 mx-auto bg-purple-500/20 rounded-full flex items-center justify-center text-purple-400 mb-4">
+                        <i class="fa-solid fa-user-shield text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-white">Spécial</h3>
+                    <p class="text-sm text-gray-300">Contrat Médecin-Malade</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12 mb-16">
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 rounded bg-primary flex items-center justify-center font-bold">O</div>
+                        <span class="font-display font-bold text-xl">Clinique Onyx</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Votre partenaire de confiance en santé mentale. Une approche humaine et professionnelle pour
+                        votre bien-être.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-white">Liens Rapides</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="#accueil" class="hover:text-primary transition-colors">Accueil</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition-colors">Nos Services</a></li>
+                        <li><a href="apropos.html" class="hover:text-primary transition-colors">À Propos de Nous</a>
+                        </li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-white">Nous Contacter</h4>
+                    <ul class="space-y-4 text-gray-400 text-sm">
+                        <li class="flex items-start gap-4">
+                            <i class="fa-solid fa-location-dot mt-1 text-primary"></i>
+                            <span>Avenue Fermier no 5, Boulevard Lumumba<br>Arrêt Banunu, Pont Matete</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fa-solid fa-phone text-primary"></i>
+                            <div class="flex flex-col">
+                                <a href="tel:0813376119" class="hover:text-white transition-colors">081 33 76 119</a>
+                                <a href="tel:0814064939" class="hover:text-white transition-colors">081 406 49 39</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2024 Clinique Onyx. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const btn = document.querySelector("button.mobile-menu-button");
+        const menu = document.querySelector(".mobile-menu");
+
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+    </script>
+    <!-- Auth Script -->
+    <script src="js/auth.js"></script>
+</body>
+
+</html>
