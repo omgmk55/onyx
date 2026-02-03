@@ -1349,6 +1349,10 @@ video {
   gap: 2rem;
 }
 
+.gap-1 {
+  gap: 0.25rem;
+}
+
 .gap-x-8 {
   -moz-column-gap: 2rem;
        column-gap: 2rem;
@@ -1812,6 +1816,11 @@ video {
 
 .bg-yellow-500\/20 {
   background-color: rgb(234 179 8 / 0.2);
+}
+
+.bg-green-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(74 222 128 / var(--tw-bg-opacity, 1));
 }
 
 .bg-gradient-to-br {
@@ -2421,6 +2430,15 @@ video {
   color: rgb(229 231 235 / var(--tw-text-opacity, 1));
 }
 
+.text-green-200 {
+  --tw-text-opacity: 1;
+  color: rgb(187 247 208 / var(--tw-text-opacity, 1));
+}
+
+.underline {
+  text-decoration-line: underline;
+}
+
 .decoration-white\/50 {
   text-decoration-color: rgb(255 255 255 / 0.5);
 }
@@ -2525,6 +2543,10 @@ video {
 .shadow-red-500\/50 {
   --tw-shadow-color: rgb(239 68 68 / 0.5);
   --tw-shadow: var(--tw-shadow-colored);
+}
+
+.outline {
+  outline-style: solid;
 }
 
 .blur {
