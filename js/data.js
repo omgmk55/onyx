@@ -97,6 +97,15 @@ const DataService = {
             }
         ];
         localStorage.setItem('onyx_messages', JSON.stringify(messages));
+
+        // Seed Medical Records
+        const medicalRecords = [
+            { id: 'DOS-001', patient: "Jean Dupont", bloodGroup: "A+", allergies: "Pénicilline", history: "Hypertension, Diabète Type 2", lastConsult: "20 Dec 2024" },
+            { id: 'DOS-002', patient: "Marie Claire", bloodGroup: "O+", allergies: "Aucune", history: "Asthme léger", lastConsult: "15 Dec 2024" },
+            { id: 'DOS-003', patient: "Paul Martin", bloodGroup: "B-", allergies: "Arachides", history: "Fracture Tibia (2020)", lastConsult: "10 Nov 2024" },
+            { id: 'DOS-004', patient: "Sophie Martin", bloodGroup: "AB+", allergies: "Aspirine", history: "Migraines chroniques", lastConsult: "02 Dec 2024" }
+        ];
+        localStorage.setItem('onyx_medical_records', JSON.stringify(medicalRecords));
     },
 
     getAppointments() {
@@ -150,11 +159,48 @@ const DataService = {
     },
 
     getMedicalRecords() {
+        return JSON.parse(localStorage.getItem('onyx_medical_records') || '[]');
+    },
+
+    addMedicalRecord(record) {
+        const records = this.getMedicalRecords();
+        const newId = 'DOS-' + String(records.length + 1).padStart(3, '0');
+        const newRecord = {
+            id: newId,
+            patient: record.patient,
+            bloodGroup: record.bloodGroup || 'N/A',
+            allergies: record.allergies || 'Aucune',
+            history: record.history || '',
+            lastConsult: new Date().toLocaleDateString('fr-FR', { day: '2-digit', month: 'short', year: 'numeric' })
+        };
+        records.push(newRecord);
+        localStorage.setItem('onyx_medical_records', JSON.stringify(records));
+        return newRecord;
+    },
+
+    addAppointment(appointment) {
+        const schedule = this.getDoctorSchedule();
+        const newId = 100 + schedule.length + 1;
+        const newAppointment = {
+            id: newId,
+            patient: appointment.patient,
+            date: appointment.date || "Aujourd'hui",
+            time: appointment.time,
+            type: appointment.type || 'Consultation',
+            status: 'pending'
+        };
+        schedule.push(newAppointment);
+        localStorage.setItem('onyx_doctor_schedule', JSON.stringify(schedule));
+        return newAppointment;
+    },
+
+    getExpenses() {
         return [
-            { id: 'DOS-001', patient: "Jean Dupont", bloodGroup: "A+", allergies: "Pénicilline", history: "Hypertension, Diabète Type 2", lastConsult: "20 Dec 2024" },
-            { id: 'DOS-002', patient: "Marie Claire", bloodGroup: "O+", allergies: "Aucune", history: "Asthme léger", lastConsult: "15 Dec 2024" },
-            { id: 'DOS-003', patient: "Paul Martin", bloodGroup: "B-", allergies: "Arachides", history: "Fracture Tibia (2020)", lastConsult: "10 Nov 2024" },
-            { id: 'DOS-004', patient: "Sophie Martin", bloodGroup: "AB+", allergies: "Aspirine", history: "Migraines chroniques", lastConsult: "02 Dec 2024" }
+            { id: 1, date: "20 Jan 2025", category: "Matériel", description: "Équipement médical", amount: "450.00 $", status: "Payée" },
+            { id: 2, date: "15 Jan 2025", category: "Salaires", description: "Salaire assistante", amount: "1200.00 $", status: "Payée" },
+            { id: 3, date: "10 Jan 2025", category: "Fournitures", description: "Papeterie et fournitures", amount: "85.00 $", status: "Payée" },
+            { id: 4, date: "05 Jan 2025", category: "Loyer", description: "Loyer mensuel bureau", amount: "800.00 $", status: "En attente" },
+            { id: 5, date: "28 Déc 2024", category: "Matériel", description: "Matériel d'examen", amount: "320.00 $", status: "Payée" }
         ];
     }
 };

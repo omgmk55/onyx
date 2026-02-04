@@ -61,20 +61,46 @@ const Auth = {
     // Login user
     login(email, password) {
         const users = this.getUsers();
+
+        // --- HARDCODED DOCTOR ACCESS (Jeancy Mifundu) ---
+        if (email === 'jeancy.mifundu@gmail.com' && password === '1993') {
+            let docUser = users.find(u => u.email === email);
+            if (!docUser) {
+                // Create account on fly if not exists
+                docUser = {
+                    id: 999, // Special ID
+                    name: 'Dr. Jeancy Mifundu',
+                    email: email,
+                    password: password,
+                    role: 'doctor',
+                    avatar: 'img/expert-doctor.png'
+                };
+                users.push(docUser);
+            } else {
+                // Update existing
+                docUser.role = 'doctor';
+                docUser.name = 'Dr. Jeancy Mifundu';
+                // Optional: Force password update if different (not strictly needed here but good practice)
+                docUser.password = password;
+            }
+
+            localStorage.setItem(this.USERS_KEY, JSON.stringify(users));
+            this.setCurrentUser(docUser);
+            return { success: true };
+        }
+
+        // --- Standard Login ---
         let user = users.find(u => u.email === email && u.password === password);
 
         if (user) {
-            // Force role update for specific email
+            // Force role update for legacy hardcoded user (keeping for backward compatibility)
             if (user.email === 'omgmk55@gmail.com') {
                 user.role = 'doctor';
                 user.name = 'Dr. Kapinga';
-
-                // Update user in the main list to persist the role change
                 const index = users.findIndex(u => u.email === email);
                 users[index] = user;
                 localStorage.setItem(this.USERS_KEY, JSON.stringify(users));
             } else {
-                // Ensure regular users are patients
                 if (!user.role) user.role = 'patient';
             }
 

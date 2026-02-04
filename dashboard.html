@@ -74,11 +74,56 @@
                         class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-primary/10 hover:text-primary transition-colors hover:animate-shake">
                         <i class="fa-solid fa-bell"></i>
                     </button>
-                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-purple-600 p-0.5 cursor-pointer transform hover:scale-105 transition-transform"
-                        onclick="alert('Profil utilisateur')">
-                        <div
-                            class="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
-                            <i class="fa-solid fa-user text-gray-400"></i>
+                    <!-- Profile Dropdown -->
+                    <div class="relative group">
+                        <button id="profile-btn"
+                            class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-purple-600 p-0.5 cursor-pointer transform hover:scale-105 transition-transform focus:outline-none">
+                            <div
+                                class="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
+                                <img src="img/expert-doctor.png" alt="Profil" class="w-full h-full object-cover">
+                            </div>
+                        </button>
+
+                        <!-- Menu Deroulant -->
+                        <div id="profile-menu"
+                            class="hidden absolute right-0 mt-2 w-56 bg-white rounded-2xl shadow-xl border border-gray-100 py-2 z-50 transform origin-top-right transition-all">
+                            <div class="px-4 py-3 border-b border-gray-50 bg-gray-50/50">
+                                <p class="text-xs font-bold text-gray-400 uppercase">Menu Médecin</p>
+                            </div>
+
+                            <a href="#" data-target="view-patients"
+                                class="sidebar-link flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-purple-50 hover:text-primary transition-colors">
+                                <i class="fa-solid fa-users w-5"></i>
+                                <span class="font-medium">Mes Patients</span>
+                            </a>
+                            <a href="#" data-target="view-medical-records"
+                                class="sidebar-link flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-purple-50 hover:text-primary transition-colors">
+                                <i class="fa-solid fa-file-medical w-5"></i>
+                                <span class="font-medium">Dossiers Médicaux</span>
+                            </a>
+                            <a href="#" data-target="view-stats"
+                                class="sidebar-link flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-purple-50 hover:text-primary transition-colors">
+                                <i class="fa-solid fa-chart-line w-5"></i>
+                                <span class="font-medium">Statistiques</span>
+                            </a>
+                            <a href="#" data-target="view-invoices"
+                                class="sidebar-link flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-purple-50 hover:text-primary transition-colors">
+                                <i class="fa-solid fa-file-invoice-dollar w-5"></i>
+                                <span class="font-medium">Factures</span>
+                            </a>
+                            <a href="#" data-target="view-expenses"
+                                class="sidebar-link flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-purple-50 hover:text-primary transition-colors">
+                                <i class="fa-solid fa-wallet w-5"></i>
+                                <span class="font-medium">Dépenses</span>
+                            </a>
+
+                            <div class="border-t border-gray-100 mt-2 pt-2">
+                                <button onclick="Auth.logout()"
+                                    class="w-full flex items-center gap-3 px-4 py-3 text-red-500 hover:bg-red-50 transition-colors text-left">
+                                    <i class="fa-solid fa-right-from-bracket w-5"></i>
+                                    <span class="font-bold">Déconnexion</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -250,6 +295,31 @@
         </main>
     </div>
 
+    <!-- Mobile Bottom Navigation -->
+    <nav
+        class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 z-50 flex justify-between items-center px-6 py-3 pb-safe">
+        <a href="#" data-target="view-dashboard" class="sidebar-link flex flex-col items-center gap-1 text-primary">
+            <i class="fa-solid fa-chart-pie text-xl"></i>
+            <span class="text-[10px] font-bold">Accueil</span>
+        </a>
+        <a href="#" data-target="view-schedule"
+            class="sidebar-link flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors">
+            <i class="fa-solid fa-calendar-check text-xl"></i>
+            <span class="text-[10px] font-bold">RDV</span>
+        </a>
+        <a href="#" data-target="view-messages"
+            class="sidebar-link flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors relative">
+            <i class="fa-solid fa-message text-xl"></i>
+            <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-red-500 rounded-full border border-white"></span>
+            <span class="text-[10px] font-bold">Message</span>
+        </a>
+        <button onclick="Auth.logout()"
+            class="flex flex-col items-center gap-1 text-red-400 hover:text-red-500 transition-colors">
+            <i class="fa-solid fa-right-from-bracket text-xl"></i>
+            <span class="text-[10px] font-bold">Sortir</span>
+        </button>
+    </nav>
+
     <!-- Scripts -->
     <script src="js/auth.js"></script>
     <script src="js/data.js"></script>
@@ -260,6 +330,21 @@
         if (user) {
             document.getElementById('userName').textContent = user.name.split(' ')[0];
         }
+
+        // Profile Menu Logic
+        const profileBtn = document.getElementById('profile-btn');
+        const profileMenu = document.getElementById('profile-menu');
+
+        profileBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            profileMenu.classList.toggle('hidden');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!profileBtn.contains(e.target) && !profileMenu.contains(e.target)) {
+                profileMenu.classList.add('hidden');
+            }
+        });
     </script>
 </body>
 
